@@ -1,6 +1,7 @@
 package com.utn.parcial.controller;
 
 import com.utn.parcial.exceptions.ClientNotExistException;
+import com.utn.parcial.exceptions.UserHasNotCallsException;
 import lombok.SneakyThrows;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.client.ClientHttpResponse;
@@ -30,6 +31,8 @@ public class RestTemplateResponseErrorHandler
     public void handleError(ClientHttpResponse response) throws IOException {
         HttpStatus statusCode = response.getStatusCode();
         switch (statusCode.value()) {
+            case 204:
+                throw new UserHasNotCallsException();
             case 500:
                 throw new ClientNotExistException();
             default:
