@@ -23,7 +23,6 @@ public class ClientComponent {
         rest = new RestTemplateBuilder().errorHandler(new RestTemplateResponseErrorHandler()).build();
     }
 
-
     public ResponseEntity<String> userCityLastCallDuration(int id){
         String uri = url+"parcial/"+id+"/";
         RestTemplate restTemplate = new RestTemplate();

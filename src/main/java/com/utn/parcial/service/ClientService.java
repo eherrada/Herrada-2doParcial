@@ -1,6 +1,5 @@
 package com.utn.parcial.service;
 
-import com.utn.parcial.model.Clients;
 import com.utn.parcial.service.integration.ClientComponent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
